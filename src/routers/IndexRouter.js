@@ -126,16 +126,22 @@ const router = new VueRouter({
             require.ensure([], () => resolve(require('../pages/demos/countdown')), 'countdown');
         }
     },{
-        name: 'slider',
-        path: '/slider',
+        name: 'range',
+        path: '/range',
         component: (resolve) => {
-            require.ensure([], () => resolve(require('../pages/demos/slider')), 'slider');
+            require.ensure([], () => resolve(require('../pages/demos/range')), 'range');
         }
     },{
-        name: 'drag',
-        path: '/drag',
+        name: 'drag-sort',
+        path: '/drag-sort',
         component: (resolve) => {
-            require.ensure([], () => resolve(require('../pages/demos/drag')), 'drag');
+            require.ensure([], () => resolve(require('../pages/demos/drag-sort')), 'drag-sort');
+        }
+    },{
+        name: 'uploadImg',
+        path: '/uploadImg',
+        component: (resolve) => {
+            require.ensure([], () => resolve(require('../pages/demos/uploadImg')), 'uploadImg');
         }
     },{
         path: '*',
@@ -157,9 +163,9 @@ const commit = IndexStore.commit || IndexStore.dispatch;
 router.beforeEach((to, from, next) => {
     const toIndex = history.getItem(to.path);
     const fromIndex = history.getItem(from.path);
-    console.log(history)
-    console.log('toIndex:' + toIndex)
-    console.log('fromIndex:' + fromIndex)
+    // console.log(history)
+    // console.log('toIndex:' + toIndex)
+    // console.log('fromIndex:' + fromIndex)
     if (toIndex) {
         if (toIndex >= fromIndex || !fromIndex) {
             var direction = 'forward';
@@ -176,7 +182,6 @@ router.beforeEach((to, from, next) => {
         commit('SET_DIRECTION', { direction })
     }
 
-    // commit('UPDATE_LOADING', true)
     setTimeout(next, 50)
 })
 

@@ -1,5 +1,6 @@
 # 此为注释 – 将被 npm publish 忽略
 
+/build
 /node_modules
-/dist
-/src/assets/js
+/src
+npm-debug.log
