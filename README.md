@@ -48,6 +48,3 @@ cubeex项目开发、打包的webpack配置没有基于vue-cli， 配置清晰�
 3. 执行 npm run dev<br>
 4. 浏览器访问http://localhost:3001<br>
 5. npm run build打包
-
-
-666test
